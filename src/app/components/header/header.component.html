@@ -1,0 +1,18 @@
+<mat-toolbar [class.elevate]="scrolled" color="primary">
+  <div class="container bar">
+    <button mat-button (click)="scrollTo('home')" class="brand">
+      <mat-icon>verified_user</mat-icon>
+      <span>VerifiedByHuman.AI</span>
+    </button>
+
+    <nav class="nav">
+      <button mat-button (click)="scrollTo('value')">Why us</button>
+      <button mat-button (click)="scrollTo('methodology')">Methodology</button>
+      <button mat-button (click)="scrollTo('services')">Services</button>
+      <button mat-button (click)="scrollTo('team')">Team</button>
+      <button mat-raised-button color="accent" (click)="scrollTo('contact')">
+        Start consultation
+      </button>
+    </nav>
+  </div>
+</mat-toolbar>
