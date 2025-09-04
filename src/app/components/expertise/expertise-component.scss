@@ -1,0 +1,47 @@
+.expertise-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 48px;
+  align-items: center;
+}
+
+.expertise-content h2 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin: 0 0 16px;
+}
+
+.feature-list {
+  margin: 0;
+  padding-left: 20px;
+  line-height: 1.9;
+  opacity: 0.85;
+}
+
+.t-shape-card {
+  text-align: center;
+}
+
+.t-shape-visual {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+}
+
+.t-letter {
+  font-size: clamp(120px, 22vw, 220px);
+  line-height: 0.8;
+  font-weight: 900;
+  background: linear-gradient(180deg, #1976d2, #9c27b0);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.t-labels {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+  justify-content: center;
+}

@@ -1,18 +1,42 @@
-<mat-toolbar [class.elevate]="scrolled" color="primary">
-  <div class="container bar">
-    <button mat-button (click)="scrollTo('home')" class="brand">
-      <mat-icon>verified_user</mat-icon>
-      <span>VerifiedByHuman.AI</span>
+<!-- Тулбар отдельно и sticky -->
+<mat-toolbar class="bar hero-bg" color="transparent">
+  <div class="container" style="display:flex; align-items:center; gap:8px; width:100%;">
+    <button class="menu-btn" mat-icon-button (click)="drawer.toggle()" aria-label="Open menu">
+      <mat-icon>menu</mat-icon>
     </button>
 
-    <nav class="nav">
-      <button mat-button (click)="scrollTo('value')">Why us</button>
-      <button mat-button (click)="scrollTo('methodology')">Methodology</button>
-      <button mat-button (click)="scrollTo('services')">Services</button>
-      <button mat-button (click)="scrollTo('team')">Team</button>
-      <button mat-raised-button color="accent" (click)="scrollTo('contact')">
-        Start consultation
-      </button>
+    <div class="brand" (click)="jumpTop()" style="cursor:pointer;">
+      <span class="dot" style="width:10px;height:10px;border-radius:50%;background:linear-gradient(135deg,#6ea8ff,#9bffd1)"></span>
+      <span>VerifiedByHuman.AI</span>
+    </div>
+
+    <div class="spacer"></div>
+
+    <nav class="nav-links" aria-label="Primary">
+      <button mat-button (click)="jump('team')">Team</button>
+      <button mat-button (click)="jump('expertise')">Expertise</button>
+      <button mat-button (click)="jump('methodology')">Methodology</button>
+      <button mat-button (click)="jump('services')">Services</button>
     </nav>
   </div>
 </mat-toolbar>
+
+
+<mat-sidenav-container>
+  <mat-sidenav #drawer
+               [mode]="drawerMode"
+               [fixedInViewport]="true"
+               [fixedTopGap]="0"
+               (closedStart)="onSidenavClosed()">
+    <nav class="column" style="padding:12px;">
+      <button mat-button (click)="jump('team'); drawer.close()">Team</button>
+      <button mat-button (click)="jump('expertise'); drawer.close()">Expertise</button>
+      <button mat-button (click)="jump('methodology'); drawer.close()">Methodology</button>
+      <button mat-button (click)="jump('services'); drawer.close()">Services</button>
+      <button mat-stroked-button color="primary" (click)="jump('contact'); drawer.close()">Contact</button>
+
+    </nav>
+  </mat-sidenav>
+
+  <div></div>
+</mat-sidenav-container>

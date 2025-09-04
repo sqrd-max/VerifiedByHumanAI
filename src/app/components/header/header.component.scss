@@ -1,4 +1,21 @@
-.bar { display:flex; align-items:center; justify-content:space-between; width:100%; }
-.brand { font-weight:700; }
-.nav button + button { margin-left: 4px; }
-mat-toolbar.elevate { box-shadow: 0 6px 20px rgba(0,0,0,.12); }
+.bar { position: sticky; top: 0; z-index: 1100; } /* только тулбар sticky */
+.brand { font-weight: 800; letter-spacing: .2px; display:flex; align-items:center; gap:8px; }
+.spacer { flex: 1 1 auto; }
+.nav-links { display:flex; gap:8px; }
+@media (max-width: 920px){ .nav-links { display:none; } .menu-btn { display:inline-flex; } }
+@media (min-width: 921px){ .menu-btn { display:none; } }
+.container { max-width: var(--maxw); margin-inline:auto; width:100%; padding-inline: clamp(16px, 2vw, 24px); }
+
+
+mat-sidenav-container {
+  position: relative;
+  z-index: 1001;
+
+}
+
+
+mat-sidenav {
+  width: min(86vw, 320px);
+  height: 100dvh;
+  overscroll-behavior: contain;
+}
