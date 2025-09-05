@@ -27,10 +27,10 @@ $beige: #efefef;
 }
 
 .hero-content h1 {
+  font-size: clamp(2rem, 5vw, 3.5rem);
   font-weight: 700;
-  font-size: clamp(28px, 5vw, 42px);
+  margin: 0 0 24px;
   line-height: 1.2;
-  margin: 0 0 16px 0;
 }
 
 .hero-subtitle,
@@ -55,10 +55,11 @@ $beige: #efefef;
 }
 
 .vb-h1 {
-  font-size: clamp(28px, 4vw, 36px);
-  font-weight: 800;
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  font-weight: 700;
+  margin: 0 0 40px;
+  line-height: 1.2;
   color: $primary-red;
-  margin: 0 0 40px 0;
   text-align: left;
 }
 
@@ -117,10 +118,12 @@ $beige: #efefef;
 }
 
 .section-title {
-  font-size: clamp(28px, 4vw, 36px);
+  font-size: clamp(2rem, 5vw, 3.5rem);
   font-weight: 700;
+  margin: 0 0 40px;
+  line-height: 1.2;
   color: $dark-charcoal;
-  margin: 0 0 40px 0;
+
   text-align: left;
 }
 
@@ -179,36 +182,68 @@ $beige: #efefef;
   margin: 0;
 }
 
-// Closing Section
-.closing-section {
-  //display: flex;
-  //justify-content: center;
-  //padding: 60px 0;
 
-  background: $dark-charcoal;
-  color: $white;
+.closing-section {
+  margin-inline: calc(50% - 50vw);
+  background: #000;
+  color: #fff;
 }
 
-//.closing-card {
-//  background: transparent;
-//
-//  text-align: left;
-//  transition: all 0.3s ease;
-//
-//  h2 {
-//    font-size: 28px;
-//    font-weight: 700;
-//    margin: 0 0 16px 0;
-//    color: $white;
-//  }
-//
-//  p {
-//    font-size: 18px;
-//    line-height: 1.6;
-//    margin: 0;
-//    opacity: 0.9;
-//  }
-//}
+
+.closing-inner {
+  max-width: 1200px;
+  margin-inline: auto;
+  padding: clamp(24px, 5vw, 64px) clamp(20px, 6vw, 96px);
+
+  display: grid;
+  grid-template-columns: 1.1fr 1fr;
+  gap: clamp(16px, 4vw, 64px);
+  align-items: center;
+}
+
+
+.closing-left h2 {
+  font-size: clamp(28px, 3.2vw, 40px);
+  line-height: 1.15;
+  margin: 0 0 16px;
+  font-weight: 800;
+
+}
+
+.closing-left p {
+  font-size: clamp(14px, 1.2vw, 18px);
+  line-height: 1.6;
+  max-width: 62ch;
+  margin: 0;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+
+.closing-right {
+  margin: 0;
+  padding-left: 1.1rem;
+  list-style: disc;
+  font-size: clamp(14px, 1.2vw, 18px);
+  line-height: 1.6;
+}
+
+.closing-right li { margin: 8px 0; }
+
+.closing-right .accent {
+  color: #d20a37; /* красные пункты как на скрине */
+  font-weight: 600;
+}
+
+
+
+/* адаптация под мобильные */
+@media (max-width: 900px) {
+  .closing-inner {
+    grid-template-columns: 1fr; /* в одну колонку */
+  }
+  .closing-right { padding-left: 1.2rem; }
+}
+
 
 // Responsive Design
 @media (max-width: 768px) {

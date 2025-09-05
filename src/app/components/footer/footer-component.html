@@ -2,44 +2,64 @@
   <div class="footer-inner">
     <!-- Top row: brand, nav, actions -->
     <div class="row-top">
-      <a class="brand" href="/" aria-label="Home">
-        <span class="brand-1">verified</span><span class="brand-2">by</span><span class="brand-3">human</span>
+      <a class="brand" routerLink="/" aria-label="Home">
+        <span class="brand-1">verified</span>
+        <span class="brand-2">by</span>
+        <span class="brand-3">human</span>
       </a>
 
       <nav class="nav" aria-label="Footer navigation">
-        <a href="#about"   class="nav-link">about</a>
-        <a href="#withus"  class="nav-link">work with us</a>
-        <a href="#blog"    class="nav-link">blog</a>
-        <a href="#contact" class="nav-link">contact</a>
+        <a routerLink="/about" class="nav-link">about</a>
+        <a routerLink="/work-with-us" class="nav-link">work with us</a>
+        <a routerLink="/blog" class="nav-link">blog</a>
+        <a routerLink="/contact" class="nav-link">contact</a>
       </nav>
 
-      <div class="actions">
-        <button mat-icon-button aria-label="Search">
-          <mat-icon>search</mat-icon>
-        </button>
-      </div>
+
     </div>
 
     <!-- Middle: newsletter -->
     <div class="row-news">
       <p class="news-title">Smart stuff, right in your inbox.</p>
       <form class="news-form" (ngSubmit)="subscribe()">
-        <mat-form-field class="email-field" >
-          <mat-label>your email *</mat-label>
-          <input matInput [formControl]="email" type="email" aria-label="Email" />
+        <mat-form-field class="email-field"  appearance="fill">
+          <mat-label>Your email</mat-label>
+          <input
+            matInput
+            [formControl]="email"
+            type="email"
+            aria-label="Email address"
+            placeholder="Enter your email" />
+          @if (email.hasError('email') && email.touched) {
+            <mat-error>Please enter a valid email address</mat-error>
+          }
+          @if (email.hasError('required') && email.touched) {
+            <mat-error>Email is required</mat-error>
+          }
         </mat-form-field>
-        <button mat-flat-button color="warn" class="btn-subscribe" type="submit">subscribe</button>
+        <button
+          mat-flat-button
+          class="btn-subscribe"
+          type="submit"
+          [disabled]="email.invalid || isSubmitting()">
+          @if (isSubmitting()) {
+            <mat-icon>hourglass_empty</mat-icon>
+            subscribing...
+          } @else {
+            subscribe
+          }
+        </button>
       </form>
     </div>
 
     <!-- Bottom: legal -->
     <div class="row-bottom">
       <div class="legal-links">
-        <a href="#" class="legal">privacy</a>
-        <a href="#" class="legal">terms</a>
-        <a href="#" class="legal">press</a>
+        <a routerLink="/privacy" class="legal">privacy</a>
+        <a routerLink="/terms" class="legal">terms</a>
+        <a routerLink="/press" class="legal">press</a>
       </div>
-      <div class="copy">© {{year()}} VerifiedByHuman.AI</div>
+      <div class="copy">© {{ currentYear() }} VerifiedByHuman.AI</div>
     </div>
   </div>
 </footer>
