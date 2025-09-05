@@ -1,47 +1,246 @@
-.expertise-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 48px;
-  align-items: center;
+//// Color Variables
+$primary-red: #dc143c;
+$dark-charcoal: #2c2c2c;
+$text-gray: #555;
+$light-gray: #f8f9fa;
+$white: #ffffff;
+$beige: #efefef;
+
+
+
+// HERO banner
+.hero-banner{
+  display: block;
+  background: $primary-red;
+  color: $white;
 }
 
-.expertise-content h2 {
-  font-size: 2.5rem;
+.hero-container {
+  margin: 0 auto;
+  max-width: 1200px;
+  padding: 60px clamp(16px, 6vw, 64px);
+}
+
+.hero-content {
+  width: 100%;
+  text-align: left;
+}
+
+.hero-content h1 {
   font-weight: 700;
-  margin: 0 0 16px;
+  font-size: clamp(28px, 5vw, 42px);
+  line-height: 1.2;
+  margin: 0 0 16px 0;
 }
 
-.feature-list {
-  margin: 0;
-  padding-left: 20px;
-  line-height: 1.9;
-  opacity: 0.85;
+.hero-subtitle,
+.leadership-note {
+  font-size: clamp(16px, 2.5vw, 18px);
+  line-height: 1.6;
+  opacity: 0.95;
+  margin: 0 0 16px 0;
 }
 
-.t-shape-card {
-  text-align: center;
+// T-Shape Section
+.t-shape-section {
+  background-color: $beige;
+  padding: 60px 0;
 }
 
-.t-shape-visual {
+// Common container
+.section-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 clamp(16px, 6vw, 64px);
+}
+
+.vb-h1 {
+  font-size: clamp(28px, 4vw, 36px);
+  font-weight: 800;
+  color: $primary-red;
+  margin: 0 0 40px 0;
+  text-align: left;
+}
+
+.vb-t-row {
+  display: flex;
+  gap: 140px;
+  align-items: flex-start;
+}
+
+.vb-t-letter {
+  font-size: clamp(80px, 12vw, 140px);
+  font-weight: 900;
+  color: $primary-red;
+  line-height: 1.8;
+}
+
+.vb-t-list {
+  flex: 1;
   display: flex;
   flex-direction: column;
-  align-items: center;
   gap: 24px;
 }
 
-.t-letter {
-  font-size: clamp(120px, 22vw, 220px);
-  line-height: 0.8;
-  font-weight: 900;
-  background: linear-gradient(180deg, #1976d2, #9c27b0);
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
-}
-
-.t-labels {
+.vb-point {
   display: flex;
   gap: 16px;
-  flex-wrap: wrap;
-  justify-content: center;
+  align-items: flex-start;
+}
+
+.vb-dash {
+  display: inline-block;
+  width: 20px;
+  height: 2px;
+  background-color: $primary-red;
+  margin-top: 14px;
+  flex-shrink: 0;
+}
+
+.vb-point-title {
+  font-weight: 700;
+  margin-bottom: 8px;
+  color: $dark-charcoal;
+  font-size: 18px;
+}
+
+.vb-point-text {
+  color: $text-gray;
+  line-height: 1.6;
+  font-size: 16px;
+}
+
+// Process Section
+.process-section {
+  padding: 60px 0;
+  background: $light-gray;
+}
+
+.section-title {
+  font-size: clamp(28px, 4vw, 36px);
+  font-weight: 700;
+  color: $dark-charcoal;
+  margin: 0 0 40px 0;
+  text-align: left;
+}
+
+
+
+
+
+// Benefits Section
+.benefits-section {
+  padding: 60px 0;
+}
+
+.benefits-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 24px;
+}
+
+.benefit-card {
+  text-align: left;
+  padding: 24px;
+  height: 100%;
+  border: 1px solid #e0e0e0;
+  transition: all 0.3s ease;
+
+  &:hover {
+    border-color: $primary-red;
+    transform: translateY(-4px);
+    box-shadow: 0 12px 32px rgba(220, 20, 60, 0.15);
+  }
+
+  mat-card-content {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+}
+
+.benefit-icon {
+  font-size: 48px;
+  width: 48px;
+  height: 48px;
+  color: $primary-red;
+}
+
+.benefit-card h3 {
+  font-size: 20px;
+  font-weight: 600;
+  color: $dark-charcoal;
+  margin: 0;
+}
+
+.benefit-card p {
+  line-height: 1.6;
+  color: $text-gray;
+  margin: 0;
+}
+
+// Closing Section
+.closing-section {
+  //display: flex;
+  //justify-content: center;
+  //padding: 60px 0;
+
+  background: $dark-charcoal;
+  color: $white;
+}
+
+//.closing-card {
+//  background: transparent;
+//
+//  text-align: left;
+//  transition: all 0.3s ease;
+//
+//  h2 {
+//    font-size: 28px;
+//    font-weight: 700;
+//    margin: 0 0 16px 0;
+//    color: $white;
+//  }
+//
+//  p {
+//    font-size: 18px;
+//    line-height: 1.6;
+//    margin: 0;
+//    opacity: 0.9;
+//  }
+//}
+
+// Responsive Design
+@media (max-width: 768px) {
+  .hero-container {
+    padding: 20px clamp(10px, 6vw, 32px);
+  }
+
+  .vb-t-row {
+    flex-direction: column;
+    gap: 24px;
+  }
+
+  .vb-t-letter {
+    align-self: center;
+  }
+
+  .process-grid,
+  .benefits-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .process-section,
+  .benefits-section,
+  .closing-section {
+    padding: 40px 0;
+  }
+
+  // Уменьшаем анимации на мобильных устройствах
+  .process-card:hover,
+  .benefit-card:hover,
+  .closing-card:hover {
+    transform: none;
+    box-shadow: none;
+  }
 }

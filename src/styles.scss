@@ -1,38 +1,29 @@
-/* You can add global styles to this file, and also import other style files */
+///////* You can add global styles to this file, and also import other style files */
 
 @use '@angular/material' as mat;
 
-
-
 :root {
-  /* fluid type */
-  --step-0: clamp(28px, 5.5vw, 54px);
-  --step-1: clamp(22px, 4vw, 34px);
-  --step-2: clamp(15px, 2.2vw, 18.5px);
-  --maxw: 1160px;
+
+  --app-font: "Manrope", Helvetica, Arial, sans-serif;
 }
 
-
-/* styles.css */
-:root { --app-font: "Manrope", Helvetica, Arial, sans-serif; }
-body { font-family: var(--app-font); font-weight: 400; }
+body {  font-family: var(--app-font); font-weight: 400; }
 h1,h2,h3 { font-family: var(--app-font); font-weight: 800; letter-spacing:-0.02em; line-height:1.1; }
-
-
-/* Shared component typography */
+////
+//////
+///* Shared component typography */
 h1 { font-size: var(--step-0); line-height: 1.06; letter-spacing: -0.02em; margin: 0 0 8px; font-weight: 800; }
 h2 { font-size: var(--step-1); letter-spacing: -0.02em; margin: 0 0 8px; font-weight: 800; }
 .lead { font-size: var(--step-2); opacity: .85; }
-
-/* Layout helpers */
-.container { max-width: var(--maxw); margin-inline: auto; padding-inline: clamp(16px, 2vw, 24px); }
+//
+///* Layout helpers */
+//.container { max-width: var(--maxw); margin-inline: auto; padding-inline: clamp(16px, 2vw, 24px); }
 .section { padding-block: clamp(56px, 8vw, 92px); }
 .grid-2 { display: grid; gap: 20px; grid-template-columns: repeat(2, minmax(0,1fr)); }
 @media (max-width: 900px) { .grid-2 { grid-template-columns: 1fr; } }
 .grid-3 { display: grid; gap: 16px; grid-template-columns: repeat(3, minmax(0,1fr)); }
 @media (max-width: 1000px){ .grid-3 { grid-template-columns: repeat(2, minmax(0,1fr)); } }
 @media (max-width: 640px){ .grid-3 { grid-template-columns: 1fr; } }
-
-.content-section {
-  padding: 0 0 80px 0;
-}
+//////
+//////
+//////

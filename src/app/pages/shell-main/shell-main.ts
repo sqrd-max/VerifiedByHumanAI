@@ -1,23 +1,23 @@
 import { Component } from '@angular/core';
-import {MatFormField, MatInput, MatLabel} from '@angular/material/input';
-import {MatCard, MatCardContent} from '@angular/material/card';
-import {MatButton} from '@angular/material/button';
+
 import {FooterComponent} from '../../components/footer/footer-component';
 import {FormBuilder, FormGroup, ReactiveFormsModule, Validators} from '@angular/forms';
 import {HeroComponent} from '../../components/hero/hero-component';
 import {TeamComponent} from '../../components/team/team-component';
 import {ExpertiseComponent} from '../../components/expertise/expertise-component';
+import {HeaderComponent} from '../../components/header/header.component';
 
 @Component({
   selector: 'app-shell-main',
   imports: [
-    MatCard,
+
     FooterComponent,
-    MatCardContent,
+
     ReactiveFormsModule,
     HeroComponent,
     TeamComponent,
-    ExpertiseComponent
+    ExpertiseComponent,
+    HeaderComponent
   ],
   templateUrl: './shell-main.html',
   styleUrl: './shell-main.scss'
