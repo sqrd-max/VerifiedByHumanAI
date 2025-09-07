@@ -1,5 +1,5 @@
 import {Component, signal} from '@angular/core';
-import {MatButton, MatIconButton} from '@angular/material/button';
+import {MatButton} from '@angular/material/button';
 import {FormControl, FormsModule, ReactiveFormsModule, Validators} from '@angular/forms';
 import {MatError, MatFormField} from '@angular/material/form-field';
 import {MatLabel} from '@angular/material/form-field';
@@ -17,7 +17,6 @@ import {RouterLink} from '@angular/router';
     MatInput,
     ReactiveFormsModule,
     MatIcon,
-    MatIconButton,
     MatError,
     RouterLink
   ],

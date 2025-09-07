@@ -3,9 +3,10 @@ import { Component } from '@angular/core';
 import {FooterComponent} from '../../components/footer/footer-component';
 import {FormBuilder, FormGroup, ReactiveFormsModule, Validators} from '@angular/forms';
 import {HeroComponent} from '../../components/hero/hero-component';
-import {TeamComponent} from '../../components/team/team-component';
+
 import {ExpertiseComponent} from '../../components/expertise/expertise-component';
 import {HeaderComponent} from '../../components/header/header.component';
+import { TeamComponent} from '../team/team-component';
 
 @Component({
   selector: 'app-shell-main',
@@ -15,9 +16,12 @@ import {HeaderComponent} from '../../components/header/header.component';
 
     ReactiveFormsModule,
     HeroComponent,
-    TeamComponent,
+
     ExpertiseComponent,
-    HeaderComponent
+    HeaderComponent,
+
+    TeamComponent,
+
   ],
   templateUrl: './shell-main.html',
   styleUrl: './shell-main.scss'

@@ -1,0 +1,476 @@
+/* Global Styles */
+:host {
+  display: block;
+  font-family: 'Roboto', sans-serif;
+}
+
+.container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 40px;
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding: 0 20px;
+  }
+}
+
+.section-header {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.section-header h2 {
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 700;
+  margin-bottom: 16px;
+  color: #000000;
+}
+
+.section-header p {
+  font-size: 1.25rem;
+  color: #666666;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* Header */
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  background: rgba(255, 255, 255, 0.95) !important;
+  backdrop-filter: blur(10px);
+  transition: all 0.3s ease;
+  box-shadow: none;
+}
+
+.header.scrolled {
+  background: rgba(255, 255, 255, 0.98) !important;
+  box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1) !important;
+}
+
+.nav-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.logo {
+  font-size: 1.8rem;
+  font-weight: 800;
+  color: #000000;
+  text-decoration: none;
+}
+
+.nav-links {
+  display: flex;
+  gap: 40px;
+  align-items: center;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: #333333;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+  color: #ff0000;
+}
+
+.cta-header-btn {
+  background: #ff0000 !important;
+  color: white !important;
+}
+
+/* Hero Section */
+.hero-section {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
+  position: relative;
+  overflow: hidden;
+  padding-top: 80px;
+}
+
+.hero-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 40px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: center;
+}
+
+@media (max-width: 768px) {
+  .hero-container {
+    grid-template-columns: 1fr;
+    gap: 40px;
+    text-align: center;
+  }
+}
+
+.hero-title {
+  font-size: clamp(2.5rem, 6vw, 4.5rem);
+  font-weight: 800;
+  line-height: 1.1;
+  margin-bottom: 24px;
+  color: #000000;
+}
+
+.highlight {
+  color: #ff0000;
+  display: block;
+}
+
+.hero-description {
+  font-size: 1.25rem;
+  color: #666666;
+  margin-bottom: 40px;
+  line-height: 1.6;
+}
+
+.hero-actions {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.primary-btn {
+  background: #ff0000 !important;
+  color: white !important;
+  padding: 16px 32px !important;
+  font-size: 1rem !important;
+  font-weight: 600 !important;
+}
+
+.secondary-btn {
+  border-color: #000000 !important;
+  color: #000000 !important;
+  padding: 16px 32px !important;
+  font-size: 1rem !important;
+  font-weight: 600 !important;
+}
+
+.hero-visual {
+  position: relative;
+  height: 400px;
+}
+
+.floating-card {
+  position: absolute;
+  background: white;
+  padding: 30px;
+  border-radius: 16px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+  animation: float 6s ease-in-out infinite;
+  min-width: 200px;
+}
+
+.floating-card:first-child {
+  top: 20%;
+  left: 0;
+}
+
+.floating-card.delayed {
+  top: 50%;
+  right: 0;
+  animation-delay: -3s;
+}
+
+.large-icon {
+  font-size: 48px !important;
+  color: #ff0000;
+  margin-bottom: 16px;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-20px); }
+}
+
+/* Services Section */
+.services-section {
+  padding: 100px 0;
+  background: #ffffff;
+}
+
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 40px;
+}
+
+.service-card {
+  transition: all 0.3s ease;
+  border-radius: 16px !important;
+  overflow: hidden;
+}
+
+.service-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15) !important;
+}
+
+.service-icon {
+  background: #ff0000 !important;
+  color: white !important;
+  font-size: 24px !important;
+}
+
+.features-list {
+  margin-top: 16px;
+}
+
+.learn-more-btn {
+  color: #ff0000 !important;
+  font-weight: 600 !important;
+}
+
+/* Team Section */
+.team-section {
+  padding: 100px 0;
+  background: #f8f9fa;
+}
+
+.section-subtitle {
+  font-size: 1.25rem;
+  color: #666666;
+  line-height: 1.6;
+  margin: 0;
+  max-width: 800px;
+}
+
+.team-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+  gap: 80px;
+  align-items: start;
+}
+
+@media (max-width: 768px) {
+  .team-container {
+    grid-template-columns: 1fr;
+    gap: 50px;
+  }
+}
+
+.team-member {
+  background: white;
+  padding: 40px;
+  border-radius: 16px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.team-member:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+}
+
+.team-member:hover .portfolio-btn {
+  background: #ff0000 !important;
+  color: #ffffff !important;
+  transform: translateX(8px);
+}
+
+.member-content h3 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #000000;
+  margin-bottom: 8px;
+  line-height: 1.2;
+}
+
+.role {
+  font-size: 1.1rem;
+  color: #ff0000;
+  font-weight: 600;
+  margin-bottom: 16px;
+}
+
+.bio {
+  font-size: 1.125rem;
+  color: #333333;
+  line-height: 1.7;
+  margin-bottom: 24px;
+}
+
+.skills mat-chip-set {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 24px;
+}
+
+.skill-tag {
+  background: #f8f8f8 !important;
+  color: #000000 !important;
+  border: 1px solid #e0e0e0 !important;
+}
+
+.skill-tag:hover {
+  background: #000000 !important;
+  color: #ffffff !important;
+}
+
+.portfolio-btn {
+  background: transparent !important;
+  color: #000000 !important;
+  border: 2px solid #000000 !important;
+  padding: 16px 32px !important;
+  font-weight: 600 !important;
+  transition: all 0.4s ease !important;
+}
+
+/* Contact Section */
+.contact-section {
+  padding: 100px 0;
+  background: #ffffff;
+}
+
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: start;
+}
+
+@media (max-width: 768px) {
+  .contact-grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+}
+
+.contact-info h2 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 20px;
+  color: #000000;
+}
+
+.contact-info p {
+  font-size: 1.125rem;
+  color: #666666;
+  margin-bottom: 40px;
+  line-height: 1.6;
+}
+
+.contact-methods {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.contact-method {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.contact-method mat-icon {
+  color: #ff0000;
+  font-size: 24px;
+}
+
+.contact-form-card {
+  border-radius: 16px !important;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1) !important;
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.full-width {
+  width: 100%;
+}
+
+.submit-btn {
+  background: #ff0000 !important;
+  color: white !important;
+  padding: 16px 32px !important;
+  font-weight: 600 !important;
+  align-self: flex-start;
+}
+
+/* Footer */
+.footer {
+  background: #000000;
+  color: white;
+  padding: 60px 0 20px;
+}
+
+.footer-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  margin-bottom: 40px;
+}
+
+.footer-brand h3 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 12px;
+}
+
+.footer-links {
+  display: flex;
+  gap: 60px;
+}
+
+.footer-links div {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.footer-links h4 {
+  font-weight: 600;
+  margin-bottom: 8px;
+  color: #ff0000;
+}
+
+.footer-links a {
+  color: #cccccc;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.footer-links a:hover {
+  color: #ff0000;
+}
+
+.footer-bottom {
+  border-top: 1px solid #333333;
+  padding-top: 20px;
+  text-align: center;
+  color: #888888;
+}
+
+/* Material Design Overrides */
+::ng-deep .mat-mdc-card {
+  --mdc-elevated-card-container-color: #ffffff;
+}
+
+::ng-deep .mat-mdc-chip {
+  --mdc-chip-container-height: auto;
+}
+
+::ng-deep .mat-mdc-form-field {
+  --mdc-filled-text-field-container-color: transparent;
+}

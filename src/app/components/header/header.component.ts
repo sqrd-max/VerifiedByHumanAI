@@ -7,12 +7,13 @@ import { ViewportScroller } from '@angular/common';
 import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
 import {takeUntilDestroyed} from '@angular/core/rxjs-interop';
 import {map} from 'rxjs';
+import {RouterLink} from '@angular/router';
 
 
 @Component({
   selector: 'app-header',
   standalone: true,
-  imports: [MatToolbarModule, MatButtonModule, MatIconModule, MatSidenavModule],
+  imports: [MatToolbarModule, MatButtonModule, MatIconModule, MatSidenavModule, RouterLink],
   templateUrl: './header.component.html',
   styleUrl: './header.component.scss'
 })

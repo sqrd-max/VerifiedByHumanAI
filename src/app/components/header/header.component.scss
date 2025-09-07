@@ -1,7 +1,43 @@
-.bar { position: sticky; top: 0; z-index: 1100; } /* только тулбар sticky */
+$primary-red: #dc143c;
+$dark-charcoal: #2c2c2c;
+$text-gray: #555;
+$light-gray: #f8f9fa;
+$white: #ffffff;
+$beige: #efefef;
+
+
+.bar { position: sticky; top: 0; z-index: 1100; }
 .brand { font-weight: 800; letter-spacing: .2px; display:flex; align-items:flex-start; gap:8px; }
 .spacer { flex: 1 1 auto; }
-.nav-links { display:flex; gap:8px; }
+.nav-links {
+  display:flex;
+  gap: 2rem;
+}
+.nav-link {
+  text-decoration: none;
+  color: var(--mat-sys-on-surface-variant);
+  font-size: 0.875rem;
+  font-weight: 500;
+  padding: 0.5rem 0;
+  position: relative;
+  transition: color 0.2s ease;
+}
+
+.nav-link:hover {
+  color: $primary-red;
+}
+
+.nav-link:hover::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: $primary-red;
+  border-radius: 1px;
+}
+
 @media (max-width: 920px){ .nav-links { display:none; } .menu-btn { display:inline-flex; } }
 @media (min-width: 921px){ .menu-btn { display:none; } }
 .container {

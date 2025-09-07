@@ -1,11 +1,11 @@
 
 <mat-toolbar class="bar hero-bg" color="transparent">
   <div class="container" >
-    <button class="menu-btn" mat-icon-button (click)="drawer.toggle()" aria-label="Open menu">
+    <button class="menu-btn"  mat-icon-button (click)="drawer.toggle()" aria-label="Open menu">
       <mat-icon>menu</mat-icon>
     </button>
 
-    <div class="brand" (click)="jumpTop()" style="cursor:pointer;">
+    <div class="brand" routerLink="/home" style="cursor:pointer;">
 
       <span>VerifiedByHuman.AI</span>
     </div>
@@ -13,10 +13,10 @@
     <div class="spacer"></div>
 
     <nav class="nav-links" aria-label="Primary">
-      <button mat-button (click)="jump('team')">Team</button>
-      <button mat-button (click)="jump('expertise')">Expertise</button>
-      <button mat-button (click)="jump('methodology')">Methodology</button>
-      <button mat-button (click)="jump('services')">Services</button>
+      <a  class="nav-link" routerLink="/team">Team</a>
+      <a class="nav-link" routerLink="#">Expertise</a>
+      <a class="nav-link" routerLink="#">Methodology</a>
+      <a class="nav-link" routerLink="/home">Home</a>
     </nav>
   </div>
 </mat-toolbar>
