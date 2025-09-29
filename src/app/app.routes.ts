@@ -16,5 +16,11 @@ export const routes: Routes = [
       import('./pages/team/team-component').then(m => m.TeamComponent)
   },
 
+  {
+    path: 'md',
+    loadComponent: () =>
+      import('./pages/markdown-sample/markdown-sample').then(m => m.MarkdownSample)
+  },
+
   { path: '**', redirectTo: '/home' }
 ];
