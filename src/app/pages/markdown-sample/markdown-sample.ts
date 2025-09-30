@@ -8,5 +8,5 @@ import {MarkdownComponent} from 'ngx-markdown';
   styleUrl: './markdown-sample.css'
 })
 export class MarkdownSample {
-
+  markdownPath = '/assets/test.md';
 }
